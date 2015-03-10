@@ -54,8 +54,8 @@
 }
 .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
   width: 100%;
-  @media (max-width: 767px) {
-    width: 100%;
+  @media (max-width: 400px){
+      margin-left: -20px;
   }
 }
 .bootstrap-select .btn:focus {

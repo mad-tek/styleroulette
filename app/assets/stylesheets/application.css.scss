@@ -188,6 +188,10 @@
     top: -117px;
     left: 200px;
   }
+  @media (max-width: 400px){
+      width: 100px;
+      left: 175px;
+    }
   .caret {
     @media (min-width: 768px){
       margin-left: 20px;
@@ -221,5 +225,8 @@
 .about_logo {
   height: 50px;
   width: 350px;
-  margin-left: -10px;
+  margin-left: -8px;
+  @media (max-width: 400px){
+    width: 210px;
+  }
 }
