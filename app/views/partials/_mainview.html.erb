@@ -1,0 +1,60 @@
+<br>
+<div class="row">
+    <div class="col-sm-12">
+      <% roulette %>
+      <div class="row">
+        <div class="col-sm-2 hidden-xs" id="thumb-col"><%= raw("<img src='#{@uploader_thumb}' />") %></div>
+        <div class="col-sm-10">
+          <h4><b><%= @title.titleize %></b></h4>
+          <p class="caption">by <b><%= @author %></b> on <%= @date %> <b>&middot;</b> <b><%= @views %></b> views
+          <span class="hidden-xs"><b>&middot;</b>
+            <span class="like"><span class='glyphicon glyphicon glyphicon-thumbs-up'></span> <%= @likes %> </span> 
+            <span class="dislike"><span class='glyphicon glyphicon glyphicon-thumbs-down dislike'></span> <%= @dislikes %></span>
+          </span></p>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-sm-9">
+          <div class="embed-container">
+            <%= content_tag(:iframe, nil, src: "//www.youtube.com/embed/#{@youtube_id}?autoplay=1&autohide=1&color=white&controls=2&iv_load_policy=3&modestbranding=1&showinfo=0&theme=light") %>
+          </div>
+          <div class="row">
+            <div class="col-xs-12" id="next_a">
+              <div>
+                <a href="#" onclick='location.reload(true); return false;' >
+                  <div id="next_button">
+                  <div style="margin-left: auto; margin-right: auto;"><h1>Next <i class="fa fa-hand-o-right"></i></h1></div>
+                  </div>
+                </a>
+              </div>
+              <br>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div id="comment_title"><h4 style="margin-top: 10px;"><i class="fa fa-comments"></i>  <%= pluralize(@comment_count, 'comment') %></h3></div>
+          <br>
+          <div id="comments">
+            <% if @entry.nil? %>
+              <div><h5>No comments here</h5></div>
+              <% else %>
+              <% @entry.map do |n| %>
+                <% post = n.select{|x| x['content']} %>
+                <% user = n.select{|x| x['author']} %>
+                <% replycount = n.select{|x| x['yt$replyCount']} %>
+                <div>
+                  <b class="caption"><%= user['author'][0]['name']['$t'] %>:</b> <%= post['content']['$t'] %>
+                </div>
+                <!--<div>
+                  <%= replycount['yt$replyCount']['$t'] %>
+                </div>-->
+                <br>
+              <% end %>
+            <% end %>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

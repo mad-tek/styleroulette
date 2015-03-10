@@ -1,0 +1,8 @@
+<div class="form-group">
+  <%= form_tag videos_path, :method => 'get', :name => "selectstyle", :remote => true do %>
+    <div>
+        <%= select_tag(:selected, options_for_select({"Choose style" => " ", "bboying" =>"bboy", "tricking" => "tricking", "popping" => "popping dance", "locking" => "locking dance", "house" => "house dance dancing", "hip hop" => "hip hop dance", "street dance" => "street dance", "freestyle" => "freestyle dance", "old school" => "old school dance", "footwork" => "footwork dance", "waacking" => "waacking", "krumping" => "krumping", "salsa" => "salsa dance", "ghetto" => "ghetto dance", "twerking" => "twerking", "pole" => "pole dancing", "all random" => "dancing"}, selected: :option), :onchange => ("javascript: document.selectstyle.submit();"), :class => "selectpicker") %>
+    </div>
+  <% end %>
+</div>
+
