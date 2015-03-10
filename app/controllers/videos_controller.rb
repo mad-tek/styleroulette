@@ -1,17 +1,9 @@
 class VideosController < ApplicationController
   def index
-    @videos = Video.order('created_at DESC')
     @style = params[:selected]
-#    @selectstyle = params[:name]
-
-    #putting the filter into the database..
-#    @filters = Filter.new
-    @stylefilter = Filter.last.name
   end
 
   def new
-# @video = Video.new
-  
   end
 
   def create
@@ -23,12 +15,5 @@ class VideosController < ApplicationController
         flash[:error] = "Did not change to #{@stylefilter}!"
         redirect_to root_url
       end
-#    @video = Video.new(params[:video])
-#    if @video.save
-#      flash[:success] = 'Video added!'
-#      redirect_to root_url
-#    else
-#      render 'new'
-#    end
   end
 end

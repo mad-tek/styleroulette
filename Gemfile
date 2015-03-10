@@ -31,6 +31,8 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'mail_form'
+gem 'simple_form'
 gem 'jquery-rails'
 gem 'font-awesome-sass'
 gem 'json'

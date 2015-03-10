@@ -11,33 +11,6 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150206125217) do
-
-  create_table "filters", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "styles", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.string   "slug"
-  end
-
-  create_table "videos", :force => true do |t|
-    t.string   "title"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.string   "link"
-    t.string   "uid"
-    t.string   "author"
-    t.string   "duration"
-    t.integer  "likes"
-    t.integer  "dislikes"
-  end
-
-  add_index "videos", ["uid"], :name => "index_videos_on_uid", :unique => true
+ActiveRecord::Schema.define(:version => 20150206094902) do
 
 end
