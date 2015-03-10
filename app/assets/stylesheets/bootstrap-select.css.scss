@@ -112,6 +112,10 @@
   overflow: hidden;
   width: 100%;
   text-align: left;
+  @media (max-width: 767px) {
+    margin-left: 0;
+    text-align: center;
+  }
 }
 .bootstrap-select.btn-group .btn .caret {
   position: absolute;
@@ -133,6 +137,9 @@
   @media (max-width: 767px) {
     top: -13px;
     left: 10px;
+  }
+  @media (max-width: 400px){
+    left: 30px;
   }
 }
 .bootstrap-select.btn-group .dropdown-menu.inner {

@@ -135,7 +135,7 @@
       display: inline-block;
       visibility: hidden;
     }
-    @media (min-width: 1480px){
+    @media (min-width: 1150px){
       top: -2px;
       border-top: 4px solid transparent;
       border-bottom: 4px solid transparent;
@@ -145,6 +145,7 @@
   }
   .btn-default, .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open > .btn-default.dropdown-toggle {
     width: 120%;
+    text-align: center;
     background-color: #2589BD;
     color: #fff;
     background-image: none;
@@ -156,9 +157,9 @@
     padding-left: 20px;
     box-sizing: border-box;
     .pull-left {
+      margin-left: auto;
+      margin-right: auto;
       float: none !important;
-      padding-right: 0px;
-      margin-right: -10px;
     }
     @media (max-width: 767px) {
       width: 120px;
@@ -193,14 +194,18 @@
       left: 175px;
     }
   .caret {
+    @media (max-width: 767px){
+      margin-left: 20px;
+    }
     @media (min-width: 768px){
       margin-left: 20px;
       border-top: 4px solid transparent;
       border-bottom: 4px solid transparent;
       border-left: 4px solid;
-    }
-    @media (max-width: 1150px){
       visibility: hidden;
+    }
+    @media (min-width: 1150px){
+      visibility: visible;
     }
   }
 
